@@ -1,3 +1,5 @@
+namespace BookApi.Models;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,9 +17,11 @@ public class MediaRepository : IRepository<Media>
         return Task.FromResult<IEnumerable<Media>>(_medias);
     }
 
-    public Task<Media?> GetByIdAsync(int id)
+    public Task<Media> GetByIdAsync(int id)
     {
         var media = _medias.FirstOrDefault(m => m.Id == id);
-        return Task.FromResult<Media?>(media);
+        if (media == null)
+            throw new KeyNotFoundException($"Media with Id {id} not found.");
+        return Task.FromResult(media);
     }
 }

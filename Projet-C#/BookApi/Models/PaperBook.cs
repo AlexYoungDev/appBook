@@ -1,3 +1,5 @@
+namespace BookApi.Models;
+
 public class PaperBook : Media
 {
     public int NumberOfPages { get; set; }

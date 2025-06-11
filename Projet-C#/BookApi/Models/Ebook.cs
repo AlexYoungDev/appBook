@@ -1,6 +1,8 @@
+namespace BookApi.Models;
+
 public class Ebook : Media
 {
-    public string? FileFormat { get; set; } 
+    public string? FileFormat { get; set; }
 
     public override void DisplayInformation()
     {

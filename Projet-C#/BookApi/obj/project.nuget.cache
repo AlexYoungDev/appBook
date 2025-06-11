@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/OB0OJs6rFo=",
+  "dgSpecHash": "yFXo5hzaYX8=",
   "success": true,
-  "projectFilePath": "/Users/alex/Desktop/Projet-C#/BookApi/BookApi.csproj",
+  "projectFilePath": "/Users/alex/Desktop/dev_web/appBook/Projet-C#/BookApi/BookApi.csproj",
   "expectedPackageFiles": [
     "/Users/alex/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/alex/.nuget/packages/microsoft.aspnetcore.openapi/9.0.3/microsoft.aspnetcore.openapi.9.0.3.nupkg.sha512",
