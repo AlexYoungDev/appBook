@@ -1,3 +1,4 @@
+namespace BookApi.Models;
 public abstract class Media : IReadable
 {
     public int Id { get; set; }
