@@ -1,0 +1,6 @@
+# Ignore binaires et objets compilés
+bin/
+obj/
+*.dll
+*.pdb
+*.cache
