@@ -1,23 +1,15 @@
-using BookApi.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace BookApi.Data;
 
-public static class DbInitializer
+public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
 {
-    public static void Seed(AppDbContext context)
+    public AppDbContext CreateDbContext(string[] args)
     {
-        // Si des livres existent déjà, on ne fait rien
-        if (context.Livres.Any()) return;
+        var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
+        optionsBuilder.UseSqlite("Data Source=livres.db");
 
-        var livres = new List<Media>
-        {
-            new Ebook { Title = "C# pour les débutants", Author = "Alice", FileFormat = "PDF" },
-            new Ebook { Title = "Apprendre ASP.NET", Author = "Bob", FileFormat = "EPUB" },
-            new PaperBook { Title = "Le Seigneur des Anneaux", Author = "Tolkien", NumberOfPages = 1137 },
-            new PaperBook { Title = "1984", Author = "George Orwell", NumberOfPages = 328 }
-        };
-
-        context.Livres.AddRange(livres);
-        context.SaveChanges();
+        return new AppDbContext(optionsBuilder.Options);
     }
 }
